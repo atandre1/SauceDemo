@@ -33,5 +33,31 @@ public class LoginTest extends BaseTest {
                 "Wrong error message is shown");
     }
 
-    //дописать тесты на все логины + логин капсом
+    @Test
+    public void loginTestPositiveCaps() {
+        loginPage.open();
+        loginPage.login("STANDARD_USER", "SECRET_SAUCE");
+        assertTrue(productsPage.isOpened(), "Title of the page is not displayed");
+    }
+
+    @Test
+    public void loginTestUser2() {
+        loginPage.open();
+        loginPage.login("locked_out_user", "secret_sauce");
+        assertTrue(productsPage.isOpened(), "Title of the page is not displayed");
+    }
+
+    @Test
+    public void loginTestUser3() {
+        loginPage.open();
+        loginPage.login("problem_user", "secret_sauce");
+        assertTrue(productsPage.isOpened(), "Title of the page is not displayed");
+    }
+
+    @Test
+    public void loginTestUser4() {
+        loginPage.open();
+        loginPage.login("performance_glitch_user", "secret_sauce");
+        assertTrue(productsPage.isOpened(), "Title of the page is not displayed");
+    }
 }
