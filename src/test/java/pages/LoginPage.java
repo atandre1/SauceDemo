@@ -15,6 +15,7 @@ public class LoginPage extends BasePage {
     }
 
     public void open() {
+
         driver.get(BASE_URL);
     }
 
@@ -22,6 +23,7 @@ public class LoginPage extends BasePage {
         driver.findElement(USERNAME_INPUT).sendKeys(userName);
         driver.findElement(PASSWORD_INPUT).sendKeys(password);
         driver.findElement(LOGIN_BUTTON).click();
+
     }
 
     public String getError() {
