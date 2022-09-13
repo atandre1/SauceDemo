@@ -30,8 +30,10 @@ public class CartPage extends BasePage {
         driver.findElement(CHECKOUT_BUTTON).click();
     }
 
-    public void removeFromCard() {
-        driver.findElement(REMOVE_BUTTON).click();
+    public void removeFromCart(String productName) {
+        String locator = String.format("//div[text() = '%s']//ancestor::div[@class='cart_item']//button[@id='remove-sauce-labs-bike-light']",
+                productName);
+        driver.findElement(By.xpath(locator)).click();
     }
 
     public String getQuantityOfItemsInCart() {

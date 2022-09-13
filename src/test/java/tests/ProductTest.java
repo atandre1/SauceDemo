@@ -9,7 +9,7 @@ import static org.testng.Assert.assertTrue;
 
 public class ProductTest extends BaseTest {
 
-    @Test
+    @Test(enabled = false)
     public void productPriceInTheCartShouldBeCorrect() {
         loginPage.open();
         loginPage.login("perfomance_glitch_user", "secret_sauce");

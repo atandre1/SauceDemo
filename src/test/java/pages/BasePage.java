@@ -47,9 +47,7 @@ public abstract class BasePage {
     }
 
     public void clickJS(By locator) {
-//        Actions actions = new Actions(driver);
-//        actions.moveToElement(driver.findElement(locator)).keyDown("0").pause(500).keyUp("0").click().build().perform();
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(locator));  //Если перестает работать Selenium
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(locator));
     }
 
 }
