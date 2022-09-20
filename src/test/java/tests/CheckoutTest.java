@@ -10,7 +10,7 @@ import static org.testng.Assert.assertTrue;
 
 public class CheckoutTest extends BaseTest {
 
-    @Test
+    @Test(description = "Check if checkout works")
     public void checkoutShouldWork() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
@@ -22,7 +22,7 @@ public class CheckoutTest extends BaseTest {
         assertTrue(completePage.isOpened(), "The checkout was not successfull");
     }
 
-    @Test
+    @Test(description = "Check if total price is correct")
     public void totalPriceShouldBeCorrect() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
@@ -38,7 +38,7 @@ public class CheckoutTest extends BaseTest {
         assertTrue(completePage.isOpened(), "Checkout error");
     }
 
-    @Test
+    @Test(description = "Check negative checkout - empty fields")
     public void checkOutEmptyFields() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
@@ -49,7 +49,7 @@ public class CheckoutTest extends BaseTest {
         assertEquals(checkoutPage.getError(), "Error: First Name is required", "Error while checking out");
     }
 
-    @Test
+    @Test(description = "Check negative checkout - empty last name")
     public void checkOutEmptyFieldLastName() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
@@ -61,7 +61,7 @@ public class CheckoutTest extends BaseTest {
 
     }
 
-    @Test
+    @Test(description = "Check negative checkout - empty zip")
     public void checkOutEmptyFieldZipCode() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
@@ -73,7 +73,7 @@ public class CheckoutTest extends BaseTest {
 
     }
 
-    @Test
+    @Test(description = "Check negative checkout - space in fields")
     public void checkOutSpaceInFields() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");

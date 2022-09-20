@@ -7,14 +7,14 @@
     </listeners>
     <test name="Thread #1">
         <classes>
-            <class name="tests.LoginTest" />
-            <class name="tests.CartTest" />
+            <class name="tests.LoginTest"/>
+            <class name="tests.CheckoutTest"/>
         </classes>
     </test> <!-- Test -->
     <test name="Thread #2">
         <classes>
-            <class name="tests.ProductTest" />
-            <class name="tests.CheckoutTest" />
+            <class name="tests.ProductTest"/>
+            <class name="tests.CartTest"/>
         </classes>
     </test> <!-- Test -->
 </suite>

@@ -29,7 +29,7 @@ public class LoginTest extends BaseTest {
         };
     }
 
-    @Test(dataProvider = "loginData")
+    @Test(description = "Check if wrong login works", dataProvider = "loginData")
     public void negativeLogin(String userName, String password, String error) {
         loginPage.open();
         loginPage.login(userName, password);
@@ -37,28 +37,28 @@ public class LoginTest extends BaseTest {
     }
 
 
-    @Test
+    @Test(description = "Check if 'caps' login works")
     public void loginTestPositiveCaps() {
         loginPage.open();
         loginPage.login("STANDARD_USER", "SECRET_SAUCE");
         assertTrue(productsPage.isOpened(), "Title of the page is not displayed");
     }
 
-    @Test
+    @Test(description = "Check if second user login works")
     public void loginTestUser2() {
         loginPage.open();
         loginPage.login("locked_out_user", "secret_sauce");
         assertTrue(productsPage.isOpened(), "Title of the page is not displayed");
     }
 
-    @Test
+    @Test(description = "Check if third user login works")
     public void loginTestUser3() {
         loginPage.open();
         loginPage.login("problem_user", "secret_sauce");
         assertTrue(productsPage.isOpened(), "Title of the page is not displayed");
     }
 
-    @Test
+    @Test(description = "Check if fourth user login works")
     public void loginTestUser4() {
         loginPage.open();
         loginPage.login("performance_glitch_user", "secret_sauce");
