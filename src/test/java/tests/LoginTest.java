@@ -12,11 +12,12 @@ import static org.testng.Assert.assertTrue;
 public class LoginTest extends BaseTest {
 
 
-
     @Test(description = "Check if correct login works")
     public void loginTestPositive() {
-        loginPage.open();
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage
+                .open()
+                .login("standard_user", "secret_sauce");
+
         assertTrue(productsPage.isOpened(), "Title of the page is not displayed");
     }
 
