@@ -1,6 +1,5 @@
 package pages;
 
-import io.qameta.allure.Step;
 import org.apache.commons.exec.TimeoutObserver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
@@ -31,7 +30,7 @@ public class ProductsPage extends BasePage {
         waitForPageLoaded();
         return waitForVisibility(PAGE_TITLE);
     }
-    @Step("Adding product to cart")
+
     public void addToCart(String product) {
         String locator = String.format("//*[text()='%s']//ancestor::div[@class='inventory_item']" +
                 "//button", product);

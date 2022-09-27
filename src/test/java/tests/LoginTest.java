@@ -12,12 +12,11 @@ import static org.testng.Assert.assertTrue;
 public class LoginTest extends BaseTest {
 
 
+
     @Test(description = "Check if correct login works")
     public void loginTestPositive() {
-        loginPage
-                .open()
-                .login("standard_user", "secret_sauce");
-
+        loginPage.open();
+        loginPage.login("standard_user", "secret_sauce");
         assertTrue(productsPage.isOpened(), "Title of the page is not displayed");
     }
 
@@ -30,7 +29,7 @@ public class LoginTest extends BaseTest {
         };
     }
 
-    @Test(description = "Check if wrong login works", dataProvider = "loginData")
+    @Test(dataProvider = "loginData")
     public void negativeLogin(String userName, String password, String error) {
         loginPage.open();
         loginPage.login(userName, password);
@@ -38,28 +37,28 @@ public class LoginTest extends BaseTest {
     }
 
 
-    @Test(description = "Check if 'caps' login works")
+    @Test
     public void loginTestPositiveCaps() {
         loginPage.open();
         loginPage.login("STANDARD_USER", "SECRET_SAUCE");
         assertTrue(productsPage.isOpened(), "Title of the page is not displayed");
     }
 
-    @Test(description = "Check if second user login works")
+    @Test
     public void loginTestUser2() {
         loginPage.open();
         loginPage.login("locked_out_user", "secret_sauce");
         assertTrue(productsPage.isOpened(), "Title of the page is not displayed");
     }
 
-    @Test(description = "Check if third user login works")
+    @Test
     public void loginTestUser3() {
         loginPage.open();
         loginPage.login("problem_user", "secret_sauce");
         assertTrue(productsPage.isOpened(), "Title of the page is not displayed");
     }
 
-    @Test(description = "Check if fourth user login works")
+    @Test
     public void loginTestUser4() {
         loginPage.open();
         loginPage.login("performance_glitch_user", "secret_sauce");
