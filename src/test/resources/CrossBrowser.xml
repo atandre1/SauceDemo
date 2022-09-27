@@ -7,15 +7,15 @@
     </listeners>
     <test name="Thread #1">
         <classes>
-            <class name="tests.LoginTest" />
-            <class name="tests.CartTest" />
+            <class name="tests.LoginTest"/>
+            <class name="tests.CheckoutTest"/>
             <parameter name="browser" value="chrome"></parameter>
         </classes>
     </test> <!-- Test -->
     <test name="Thread #2">
         <classes>
-            <class name="tests.ProductTest" />
-            <class name="tests.CheckoutTest" />
+            <class name="tests.ProductTest"/>
+            <class name="tests.CartTest"/>
             <parameter name="browser" value="firefox"></parameter>
         </classes>
     </test> <!-- Test -->
