@@ -1,6 +1,5 @@
 package pages;
 
-import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.By;
 
@@ -16,12 +15,10 @@ public class CheckoutPage extends BasePage {
         super(driver);
     }
 
-    @Step("Opening Checkout Page")
     public void openCheckoutPage() {
         driver.get(BASE_URL + "checkout-step-one.html");
     }
 
-    @Step("Filling checkout fields in")
     public void fillInCheckout(String firstName, String lastName, String zipCode) {
         driver.findElement(FIRST_NAME).sendKeys(firstName);
         driver.findElement(LAST_NAME).sendKeys(lastName);
